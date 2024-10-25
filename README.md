@@ -1,4 +1,4 @@
-# ISI World Gen Tweaker
+# ISI Unlocked Traders
 
 A 7 Days to Die (7D2D) mod that allows traders to spawn in any biome.
 
