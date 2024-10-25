@@ -1,0 +1,17 @@
+<ISI>
+    <!-- Journey to Settlement -->
+    <!-- Make the first quest send to any biome (instead of restricting to Pine Forest) -->
+    <set xpath="/quests/quest[@id='quest_whiteRiverCitizen1']/objective[@type='Goto']/property[@name='biome_filter_type']/@value">AnyBiome</set>
+    <remove xpath="/quests/quest[@id='quest_whiteRiverCitizen1']/objective[@type='Goto']/property[@name='biome_filter']" />
+
+    <!-- Opening Trade Routes -->
+    <!-- Send to any trader in any biome -->
+    <remove xpath="/quests/quest[contains(@id, 'nexttrader')]/objective[@type='Goto']" />
+
+    <insertafter xpath="/quests/quest[contains(@id, 'nexttrader')]/property[@name='quest_type']">
+        <objective type="Goto" id="trader" value="5" phase="1">
+            <property name="nav_object" value="go_to_trader" />
+            <property name="biome_filter_type" value="AnyBiome" param1="biome_filter_type" />
+        </objective>
+    </insertafter>
+</ISI>

@@ -1,0 +1,23 @@
+<ISI>
+    <!-- Journey to Settlement -->
+    <!-- Do nothing to leave bound to Pine Forest -->
+
+    <!-- Opening Trade Routes -->
+    <!-- Set the biome filter type to "OnlyBiome" -->
+    <set xpath="//quest[contains(@id, 'nexttrader')]/objective[@type='Goto']/property[@name='biome_filter_type']/@value">OnlyBiome</set>
+    <removeattribute xpath="//quest[contains(@id, 'nexttrader')]/objective[@type='Goto']/property[@name='biome_filter_type']/@param1" />
+
+    <!-- Bind each quest to a specific biome -->
+    <append xpath="//quest[@id='tier2_nexttrader']/objective[@type='Goto']">
+        <property name="biome_filter" value="burnt_forest" />
+    </append>
+    <append xpath="//quest[@id='tier3_nexttrader']/objective[@type='Goto']">
+        <property name="biome_filter" value="desert" />
+    </append>
+    <append xpath="//quest[@id='tier4_nexttrader']/objective[@type='Goto']">
+        <property name="biome_filter" value="snow" />
+    </append>
+    <append xpath="//quest[@id='tier5_nexttrader']/objective[@type='Goto']">
+        <property name="biome_filter" value="wasteland" />
+    </append>
+</ISI>
