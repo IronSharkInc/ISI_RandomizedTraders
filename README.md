@@ -12,7 +12,7 @@ This mod also offers two choices for quest progression:
 
 ## Any Biome
 
-This mod defaults to "Any Biome" due to one of the difficulties with unlocking traders to spawn in any biome: some biomes may not get any traders, which breaks "Next Biome" but is not a problem for "Any Biome". "Any Biome" is also ideal for maps where other biomes have been mostly eliminated.
+This mod defaults to "Any Biome" due to one of the difficulties with unlocking traders to spawn in any biome: sometimes a biome may not get any traders, which breaks "Next Biome" progrssion but is not a problem for "Any Biome" progression. "Any Biome" progression is also ideal for maps where other biomes have been mostly eliminated.
 
 ## Next Biome
 
