@@ -4,10 +4,10 @@ A 7 Days to Die (7D2D) mod that allows traders to spawn in any biome.
 
 This mod also offers two choices for quest progression:
 
-1. Next Biome: Traders are random, but stil starts in Pine Forest then moves to progressively more difficult biomes
+1. Next Biome: Traders are random, but the player still starts in Pine Forest before moving to progressively more difficult biomes.
     - _this is similar to vanilla, except the trader can be different_
     - _example: Bob (instead of Rekt) in the Pine Forest, then Joel (instead of Jen) in Burnt Forest, etc.,_
-2. Any Biome: Now the biomes are also random. Starts in the biome with the closest trader, and then moves randomly between biomes
+2. Any Biome: Now the biomes are also random. The player is sent to the closest trader (regardless of biome), and then moves randomly between biomes.
     - _example: Bob in the Snow (instead of Pine Forest), then Rekt in Wasteland (instead of Burnt Forest), etc.,_
 
 ## Any Biome
