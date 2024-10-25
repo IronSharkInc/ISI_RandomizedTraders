@@ -1,7 +1,7 @@
 <ISI>
     <conditional>
         <!-- set cond="true" if you want true randomness, starting in and being sent to any random biome -->
-        <!-- set cond="true" if any biome is missing or has no traders (e.g., the "Journey to Settlement" quest says "NO TRADER" 
+        <!-- set cond="true" if any biome has no traders (e.g., the "Journey to Settlement" quest says "NO TRADER" 
              or an "Opening Trade Routes" quest is not offered after completing a quest tier) -->
         <!-- set cond="false" to start in the Pine Forest and move to harder biomes -->
         <if cond="false">
