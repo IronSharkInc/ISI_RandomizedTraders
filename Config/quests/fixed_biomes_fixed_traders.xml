@@ -1,0 +1,90 @@
+<ISI>
+    <!-- Goal: Match vanilla settings visiting traders in biomes in a pre-determined order -->
+
+    <!-- Journey to Settlement -->
+    <!-- 1: Rekt in Pine Forest -->
+    <remove xpath="//quest[@id='quest_whiteRiverCitizen1']/objective[@type='Goto']" />
+    <insertafter xpath="//quest[@id='quest_whiteRiverCitizen1']/action[@type='ShowMessageWindow']">
+        <objective type="Goto" id="trader" value="5" phase="1">
+            <property name="location_tag" value="TraderRekt" param1="trader_tag" />
+            <property name="location_name" value="trader_rekt" />
+            <property name="biome_filter_type" value="OnlyBiome" />
+            <property name="biome_filter" value="pine_forest" />
+            <property name="nav_object" value="go_to_trader" />
+        </objective>
+    </insertafter>
+
+    <!-- Opening Trade Routes -->
+    <!-- 2: Jen in Burnt Forest
+         3: Bob in Desert
+         4: Hugh in Snow
+         5: Joel in Wasteland -->
+
+    <!-- give every trader every "Opening Trade Routes" quest -->
+    <remove xpath="//quests/quest_list[contains(@id,'trader_')]/quest[contains(@id,'_nexttrader')]" />
+    <append xpath="/quests/quest_list[starts-with(@id, 'trader_')]">
+        <quest id="tier2_nexttrader" />
+        <quest id="tier3_nexttrader" />
+        <quest id="tier4_nexttrader" />
+        <quest id="tier5_nexttrader" />
+    </append>
+
+    <!-- remove the Goto objective to simplify the next step -->
+    <remove xpath="//quest[contains(@id,'_nexttrader')]/objective[@type='Goto']" />
+    <!-- recreate Goto objective from scratch -->
+    <insertafter xpath="//quest[contains(@id,'_nexttrader')]/property[@name='quest_type']">
+        <objective type="Goto" id="trader" value="5" phase="1">
+            <property name="biome_filter_type" value="OnlyBiome" />
+            <property name="nav_object" value="go_to_trader" />
+        </objective>
+    </insertafter>
+
+    <!-- bind each tier to a specific trader -->
+    <append xpath="//quest[@id='tier2_nexttrader']/objective[@type='Goto']">
+        <property name="location_tag" value="TraderJen" param1="trader_tag" />
+        <property name="location_name" value="trader_jen" />
+    </append>
+    <append xpath="//quest[@id='tier3_nexttrader']/objective[@type='Goto']">
+        <property name="location_tag" value="TraderBob" param1="trader_tag" />
+        <property name="location_name" value="trader_bob" />
+    </append>
+    <append xpath="//quest[@id='tier4_nexttrader']/objective[@type='Goto']">
+        <property name="location_tag" value="TraderHugh" param1="trader_tag" />
+        <property name="location_name" value="trader_hugh" />
+    </append>
+    <append xpath="//quest[@id='tier5_nexttrader']/objective[@type='Goto']">
+        <property name="location_tag" value="TraderJoel" param1="trader_tag" />
+        <property name="location_name" value="trader_joel" />
+    </append>
+
+    <!-- bind each tier to a specific biome -->
+    <append xpath="//quest[@id='tier2_nexttrader']/objective[@type='Goto']">
+        <property name="biome_filter" value="burnt_forest" />
+    </append>
+    <append xpath="//quest[@id='tier3_nexttrader']/objective[@type='Goto']">
+        <property name="biome_filter" value="desert" />
+    </append>
+    <append xpath="//quest[@id='tier4_nexttrader']/objective[@type='Goto']">
+        <property name="biome_filter" value="snow" />
+    </append>
+    <append xpath="//quest[@id='tier5_nexttrader']/objective[@type='Goto']">
+        <property name="biome_filter" value="wasteland" />
+    </append>
+
+    <!-- TODO: Bug 
+        Jen in Burnt Forest sent me to Bob in Burnt Forest. It should have tried and failed to send me to
+    Bob in Desert because there was no Bob in Desert (~pine, burnt, snow)
+        Hugh in Snow did not offer Opening Trade Routes quest to Joel in Wasteland. This was expected since
+    there was no Joel in Wasteland (~pine, burnt, desert), but it's different behavior from the
+    situation above...
+        Hugh in Desert did have the Opening Trade Routes quest to Joel, but in the Desert...
+
+        Rekt in Pine offers Joel (in pine?)
+        Jen and Bob in Burnt offers Joel (in burnt?)
+
+        Perhaps it falls back to the current biome if the desired trader is missing in next biome (Bob in
+    Jen's PF, but no Joel in Hugh's Snow). May also have to do with the difficulty_tier associated with
+    each _nextrader quest as that seems to be one of the only differences.
+    -->
+
+</ISI>

@@ -1,0 +1,42 @@
+<ISI>
+    <!-- Goal: Randomize both traders and biomes. -->
+
+    <!-- Journey to Settlement -->
+    <!-- 1: Any Trader in Any Biome -->
+    <remove xpath="//quest[@id='quest_whiteRiverCitizen1']/objective[@type='Goto']" />
+    <insertafter xpath="//quest[@id='quest_whiteRiverCitizen1']/action[@type='ShowMessageWindow']">
+        <objective type="Goto" id="trader" value="5" phase="1">
+            <property name="location_tag" value="trader" param1="trader_tag" />
+            <property name="location_name" value="xuiTrader" />
+            <property name="biome_filter_type" value="AnyBiome" param1="biome_filter_type" />
+            <property name="nav_object" value="go_to_trader" />
+        </objective>
+    </insertafter>
+
+    <!-- Opening Trade Routes -->
+    <!-- 2: Any Trader in Any Biome
+         3: Any Trader in Any Biome
+         4: Any Trader in Any Biome
+         5: Any Trader in Any Biome -->
+
+    <!-- give every trader every "Opening Trade Routes" quest -->
+    <remove xpath="//quests/quest_list[contains(@id,'trader_')]/quest[contains(@id,'_nexttrader')]" />
+    <append xpath="/quests/quest_list[starts-with(@id, 'trader_')]">
+        <quest id="tier2_nexttrader" />
+        <quest id="tier3_nexttrader" />
+        <quest id="tier4_nexttrader" />
+        <quest id="tier5_nexttrader" />
+    </append>
+
+    <!-- remove the Goto objective to simplify the next step -->
+    <remove xpath="//quest[contains(@id,'_nexttrader')]/objective[@type='Goto']" />
+    <!-- recreate Goto objective from scratch -->
+    <insertafter xpath="//quest[contains(@id,'_nexttrader')]/property[@name='quest_type']">
+        <objective type="Goto" id="trader" value="5" phase="1">
+            <property name="location_tag" value="trader" param1="trader_tag" />
+            <property name="location_name" value="xuiTrader" />
+            <property name="nav_object" value="go_to_trader" />
+            <property name="biome_filter_type" value="AnyBiome" param1="biome_filter_type" />
+        </objective>
+    </insertafter>
+</ISI>

@@ -1,12 +1,19 @@
 <ISI>
-	<!-- allow traders to spawn in any biome: the comments on the right show the vanilla settings -->
-	<set xpath="/rwgmixer/prefab_spawn_adjust[@partial_name='trader_rekt']/@biomeTags">forest,burntforest,desert,snow,wasteland</set><!-- forest -->
-	<set xpath="/rwgmixer/prefab_spawn_adjust[@partial_name='trader_jen']/@biomeTags">forest,burntforest,desert,snow,wasteland</set><!-- burntforest -->
-	<set xpath="/rwgmixer/prefab_spawn_adjust[@partial_name='trader_bob']/@biomeTags">forest,burntforest,desert,snow,wasteland</set><!-- desert -->
-	<set xpath="/rwgmixer/prefab_spawn_adjust[@partial_name='trader_hugh']/@biomeTags">forest,burntforest,desert,snow,wasteland</set><!-- snow -->
-	<set xpath="/rwgmixer/prefab_spawn_adjust[@partial_name='trader_joel']/@biomeTags">forest,burntforest,desert,snow,wasteland</set><!-- wasteland -->
+	<!-- Goal: allow traders to spawn in any biome -->
 
-	<!-- these are the vanilla settings: increase the min/max if you are having trouble getting traders to spawn in all biomes -->
+	<!-- add all biomes (comments on the right show the vanilla settings) -->
+	<set xpath="/rwgmixer/prefab_spawn_adjust[@partial_name='trader_rekt']/@biomeTags">
+		forest,burntforest,desert,snow,wasteland</set><!-- forest -->
+	<set xpath="/rwgmixer/prefab_spawn_adjust[@partial_name='trader_jen']/@biomeTags">
+		forest,burntforest,desert,snow,wasteland</set><!-- burntforest -->
+	<set xpath="/rwgmixer/prefab_spawn_adjust[@partial_name='trader_bob']/@biomeTags">
+		forest,burntforest,desert,snow,wasteland</set><!-- desert -->
+	<set xpath="/rwgmixer/prefab_spawn_adjust[@partial_name='trader_hugh']/@biomeTags">
+		forest,burntforest,desert,snow,wasteland</set><!-- snow -->
+	<set xpath="/rwgmixer/prefab_spawn_adjust[@partial_name='trader_joel']/@biomeTags">
+		forest,burntforest,desert,snow,wasteland</set><!-- wasteland -->
+
+	<!-- increase the min/max if you are having trouble getting traders to spawn in all biomes -->
 	<set xpath="/rwgmixer/prefab_spawn_adjust[starts-with(@partial_name, 'trader_')]/@min_count">2</set>
 	<set xpath="/rwgmixer/prefab_spawn_adjust[starts-with(@partial_name, 'trader_')]/@max_count">4</set>
 </ISI>

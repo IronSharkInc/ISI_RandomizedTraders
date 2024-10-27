@@ -1,29 +1,16 @@
 <ISI>
-    <conditional>
-        <!-- set cond="true" if you want true randomness, starting in and being sent to any random biome -->
-        <!-- set cond="true" if any biome has no traders (e.g., the "Journey to Settlement" quest says "NO TRADER" 
-             or an "Opening Trade Routes" quest is not offered after completing a quest tier) -->
-        <!-- set cond="false" to start in the Pine Forest and move to harder biomes -->
-        <if cond="true">
-            <include filename="quests/any_biome.xml"/>
-        </if>
-        <else>
-            <include filename="quests/next_biome.xml"/>
-        </else>
-    </conditional>
+    <!-- Goal: Make "Journey to Settlement" and "Opening Trade Routes" work with unlocked traders. -->
 
-    <!-- give every trader every "Opening Trade Routes" quest -->
-    <remove xpath="/quests/quest_list[starts-with(@id, 'trader')]/quest[contains(@id, 'nexttrader')]" />
-	
-	<append xpath="/quests/quest_list[starts-with(@id, 'trader')]">
-		<quest id="tier2_nexttrader" />
-		<quest id="tier3_nexttrader" />
-		<quest id="tier4_nexttrader" />
-		<quest id="tier5_nexttrader" />
-	</append>
+    <!-- Choose one:
+        fixed_biomes_fixed_traders - Pine to Wasteland, Rekt to Joel
+        fixed_biomes_random_traders - Pine to Wasteland, Any trader (default, recommended)
+        random_biomes_fixed_traders - Any biome, Rekt to Joel
+        random_biomes_random_traders - Any biome, Any trader
+    -->
 
-    <!-- send to closest trader -->
-	<append xpath="/quests/quest[contains(@id, 'nexttrader')]/objective[@type='InteractWithNPC']">
-		<property name="use_closest" value="true" />
-	</append>
+    <!-- <include filename="quests/fixed_biomes_fixed_traders.xml" /> -->
+    <include filename="quests/fixed_biomes_random_traders.xml" />
+    <!-- <include filename="quests/random_biomes_fixed_traders.xml" /> -->
+    <!-- <include filename="quests/random_biomes_random_traders.xml" /> -->
+
 </ISI>

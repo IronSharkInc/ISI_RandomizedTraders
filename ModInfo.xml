@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xml>
-	<Name value="ISI-UnlockedTraders"/>
-	<DisplayName value="ISI Unlocked Traders"/>
-	<Version value="1.1.0.0"/>
-	<Description value="Allow traders to spawn in any biomes _without_ breaking trader progression"/>
-	<Author value="IronSharkInc"/>
-	<Website value="https://github.com/IronSharkInc"/>
+	<Name value="ISI-UnlockedTraders" />
+	<DisplayName value="ISI Unlocked Traders" />
+	<Version value="1.1.0.0" />
+	<Description value="Allow traders to spawn in any biomes _without_ breaking trader progression" />
+	<Author value="IronSharkInc" />
+	<Website value="https://github.com/IronSharkInc" />
 </xml>
