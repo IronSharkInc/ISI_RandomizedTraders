@@ -2,6 +2,8 @@
 
 A 7 Days to Die (7D2D) mod that allows traders to spawn in any biome. Also adjusts "Journey to Settlement" and "Opening Trade Routes" quests to account for traders spawning anywhere.
 
+![The logs that shows in which biomes traders spawned](traders_randomly_spawn_in_any_biome.png)
+
 ## Note
 
 Because 7D2D relies on RNG it is possible for some biomes to have many traders while others have none. Some settings have been tweaked to help avoid that, but it is still a possibility.
@@ -11,6 +13,8 @@ When you create a map make sure that at least one trader spawns in each biome. T
 Alternatively, you can hit `F1` and look for lines that look like this: `Trader trader_jen, desert, gateway, marker , at 7235, 5139`
 
 ![The logs that shows in which biomes traders spawned](trader_logs.png)
+![Zoom in on the logs that shows in which biomes traders spawned](trader_logs_zoom.png)
+
 
 ## Troubleshooting
 
