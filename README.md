@@ -47,3 +47,12 @@ Alternatively, you can hit `F1` and look for lines that look like this: `Trader 
 1. Open `\ISI_RandomizedTraders\Config\rwgmixer.xml` and increase `min_count` and `max_count`.
 2. Generate a new map.
 3. Repeat until a trader shows up in every biome.
+
+## Testing
+
+1. Generate a new world and check F1 logs to verify traders spawn in multiple biomes (look for: `Trader [name], [biome], gateway, marker , at [coordinates]`)
+2. Verify traders appear in multiple biomes (not just their vanilla locations)
+3. Start "Journey to Settlement" quest and verify it takes you to any trader in pine forest (not necessarily Rekt)
+   - Use console command `givequest quest_whiteRiverCitizen1` to quickly test
+4. Begin "Opening Trade Routes" and verify quest progression: forest → burnt → desert → snow → wasteland
+   - Use console commands `givequest tier2_nexttrader`, `givequest tier3_nexttrader`, etc. to test progression
