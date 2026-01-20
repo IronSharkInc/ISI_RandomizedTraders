@@ -1,0 +1,7 @@
+Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,spanish,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese
+
+a_pine_forest_trader,POI,POIName,,x,Rick’s Trail Food & Feed,,,,,,,,,,,,,
+a_burnt_forest_trader,POI,POIName,,x,Jennifer's Ashen Apothecary,,,,,,,,,,,,,
+a_desert_trader,POI,POIName,,x,Rob’s Rust & Rigs,,,,,,,,,,,,,
+a_snow_trader,POI,POIName,,x,Hayes’s Cold Iron,,,,,,,,,,,,,
+a_wasteland_trader,POI,POIName,,x,Joe’s Salvaged Armor,,,,,,,,,,,,,

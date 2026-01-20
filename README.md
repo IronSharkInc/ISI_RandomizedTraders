@@ -15,7 +15,6 @@ Alternatively, you can hit `F1` and look for lines that look like this: `Trader 
 ![The logs that shows in which biomes traders spawned](trader_logs.png)
 ![Zoom in on the logs that shows in which biomes traders spawned](trader_logs_zoom.png)
 
-
 ## Troubleshooting
 
 ### "Journey to Settlement" quest says "NO TRADER"

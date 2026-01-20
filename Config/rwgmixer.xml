@@ -16,4 +16,14 @@
 	<!-- increase the min/max if you are having trouble getting traders to spawn in all biomes -->
 	<set xpath="/rwgmixer/prefab_spawn_adjust[starts-with(@partial_name, 'trader_')]/@min_count">2</set>
 	<set xpath="/rwgmixer/prefab_spawn_adjust[starts-with(@partial_name, 'trader_')]/@max_count">4</set>
+
+	<!-- Guarantee at least one trader in each biome -->
+	<append xpath="/rwgmixer">
+		<prefab_spawn_adjust partial_name="a_pine_forest_trader"  biomeTags="forest"      bias="20" min_count="1" max_count="1"/>
+		<prefab_spawn_adjust partial_name="a_burnt_forest_trader" biomeTags="burntforest" bias="20" min_count="1" max_count="1"/>
+		<prefab_spawn_adjust partial_name="a_desert_trader"       biomeTags="desert"      bias="20" min_count="1" max_count="1"/>
+		<prefab_spawn_adjust partial_name="a_snow_trader"         biomeTags="snow"        bias="20" min_count="1" max_count="1"/>
+		<prefab_spawn_adjust partial_name="a_wasteland_trader"    biomeTags="wasteland"   bias="20" min_count="1" max_count="1"/>
+	</append>
+
 </ISI>
