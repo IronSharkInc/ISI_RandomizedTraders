@@ -33,7 +33,7 @@ On top of the randomized trader locations, an additional trader will spawn in ea
 4. Give every "Opening Trade Routes" quest to all traders since we don't know who will be visited first
 5. Copy the trader POIs and add "trader" to "ThemeTags" to prevent traders from spawning next to each other (traders would all spawn in one spot leaving the rest of the map empty)
     - [khzmusik](https://7daystodiemods.com/trader-progression/) came up with this solution and allowed me to reuse it here (see "About the POIs")
-6. Copy the trader POIs again, but with different names, so we can tie these copies to one biome, to guarantee at least one trade in every biome.
+6. Copy the trader POIs again, but with different names, so we can tie these copies to one biome, to guarantee at least one trader in every biome.
 
 ## Developer Testing Notes
 
