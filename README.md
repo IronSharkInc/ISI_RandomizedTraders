@@ -1,57 +1,61 @@
 # ISI Randomized Traders
 
-A 7 Days to Die (7D2D) mod that allows traders to spawn in any biome. Also adjusts "Journey to Settlement" and "Opening Trade Routes" quests to account for traders spawning anywhere.
+A 7 Days to Die (7D2D) mod that allows traders to spawn in any biome. For example:
 
-![The logs that shows in which biomes traders spawned](traders_randomly_spawn_in_any_biome.png)
+- Jen can be found in all biomes, not just the Burnt Forest
+- You can find Joel and Bob both in the snow, the biome isn't locked to one trader.
 
-## Note
+Includes compatibility updates for the "Journey to Settlement" and "Opening Trade Routes" quests to work with randomized trader locations.
 
-Because 7D2D relies on RNG it is possible for some biomes to have many traders while others have none. Some settings have been tweaked to help avoid that, but it is still a possibility.
+**Note**: This mod requires a new random world generation to take effect. Existing worlds will not have randomized traders.
 
-When you create a map make sure that at least one trader spawns in each biome. Traders are shown as red squares, and are often located on the edge of cities near major roads.
+## January 2026 Update
 
-Alternatively, you can hit `F1` and look for lines that look like this: `Trader trader_jen, desert, gateway, marker , at 7235, 5139`
+On top of the randomized trader locations, an additional trader will spawn in each biome. This is to prevent RNG leaving a biome without any traders.
 
-![The logs that shows in which biomes traders spawned](trader_logs.png)
-![Zoom in on the logs that shows in which biomes traders spawned](trader_logs_zoom.png)
+![POI Teleporter shows traders across biomes](images/trader-locations.png)
 
-## Troubleshooting
+![Jen in the Pine Forest](images/biome-1-pine-jen.png)
 
-### "Journey to Settlement" quest says "NO TRADER"
+![Bob in the Burnt Forest](images/biome-2-burnt-bob.png)
 
-7D2D did not spawn the appropriate trader in the Pine Forest.
+![Rekt in the Desert](images/biome-3-desert-rekt.png)
 
-- You can still complete the quest, but you will have to find a trader in another biome.
-- Restart. Create a new map and make sure the appropriate trader spawns in the Pine Forest.
+![Joel in the Snow](images/biome-4-snow-joel.png)
 
-### Trader did not offer the next "Opening Trade Routes" quest
+![Hugh in the Wasteland](images/biome-5-wasteland-hugh.png)
 
-7D2D did not spawn a trader in the next biome.
+## How it Works
 
-- Wait a day. Sometimes the quest doesn't show up until the next day.
-- Visit the other traders. They may send you to the expected trader but in a different biome.
-- Manually find the next trader (they won't be in the expected biome).
-- Skip it. Not ideal, but you can keep working towards the next tier without going to the next trader.
-- Restart. Create a new map and verify the appropriate trader spawns in each biome.
+1. Assigns traders to all biomes instead of just one each
+2. Update "Journey to Settlement" to send to "Pine Forest" instead of "Rekt"
+3. Update "Opening Trade Routes" to send to next biome instead of next trader (i.e. send to Burnt Forest instead of assuming Jen is in the Burnt Forest)
+4. Give every "Opening Trade Routes" quest to all traders since we don't know who will be visited first
+5. Copy the trader POIs and add "trader" to "ThemeTags" to prevent traders from spawning next to each other (traders would all spawn in one spot leaving the rest of the map empty)
+    - [khzmusik](https://7daystodiemods.com/trader-progression/) came up with this solution and allowed me to reuse it here (see "About the POIs")
+6. Copy the trader POIs again, but with different names, so we can tie these copies to one biome, to guarantee at least one trade in every biome.
 
-### Too many traders in one biome
+## Developer Testing Notes
 
-1. Open `\ISI_RandomizedTraders\Prefabs\POIs\trader_bob.xml` and increase `ThemeRepeatDistance`.
-2. Do the same for the other traders.
-3. Then generate a new map.
-4. Repeat until traders are more evenly spaced.
+1. Generate a new world and confirm traders spawned in multiple biomes
+   - Random Gen Previewer: Open console (`F1`) and check the logs for lines that look like:
 
-### Traders are not spawning in every biome
+      ```text
+      Trader trader_jen, desert, gateway, marker , at 7235, 5139
+      Trader trader_bob, forest, gateway, marker , at 4567, 2345
+      Trader trader_hugh, snow, gateway, marker , at 6789, 3456
+      ```
 
-1. Open `\ISI_RandomizedTraders\Config\rwgmixer.xml` and increase `min_count` and `max_count`.
-2. Generate a new map.
-3. Repeat until a trader shows up in every biome.
-
-## Testing
-
-1. Generate a new world and check F1 logs to verify traders spawn in multiple biomes (look for: `Trader [name], [biome], gateway, marker , at [coordinates]`)
-2. Verify traders appear in multiple biomes (not just their vanilla locations)
-3. Start "Journey to Settlement" quest and verify it takes you to any trader in pine forest (not necessarily Rekt)
+   - ***OR*** In Game: Enable debug mode (`F1` → `dm`), open the menu (`Esc`), click "Open POI Teleporter", and search for "trader"
+   - ***OR*** Use [7 Days to Die Map Renderer](https://kui.github.io/7dtd-map/) to search the map
+2. Confirm randomized traders appear in non-vanilla biomes (e.g., Jen in Desert, Bob in Snow, etc.,)
+3. Start "Journey to Settlement" quest and verify it takes you to any trader in the pine forest (not necessarily Rekt)
    - Use console command `givequest quest_whiteRiverCitizen1` to quickly test
-4. Begin "Opening Trade Routes" and verify quest progression: forest → burnt → desert → snow → wasteland
-   - Use console commands `givequest tier2_nexttrader`, `givequest tier3_nexttrader`, etc. to test progression
+4. Begin "Opening Trade Routes" and verify quest progression works with any trader in each biome
+   - Use console commands `givequest tier2_nexttrader`, `givequest tier3_nexttrader`, etc., to test progression
+
+![Console shows traders across biomes](images/random-gen-previewer-logs.png)
+
+![Player logs show traders across biomes](images/player-logs.png)
+
+![Map Renderer shows Rekt in multiple biomes](images/traders_randomly_spawn_in_any_biome.png)
