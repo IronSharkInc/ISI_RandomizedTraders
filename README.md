@@ -58,4 +58,6 @@ On top of the randomized trader locations, an additional trader will spawn in ea
 
 ![Player logs show traders across biomes](images/player-logs.png)
 
+![POI Teleporter shows traders across biomes](images/trader-locations.png)
+
 ![Map Renderer shows Rekt in multiple biomes](images/traders_randomly_spawn_in_any_biome.png)
