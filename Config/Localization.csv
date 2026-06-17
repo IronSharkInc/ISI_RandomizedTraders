@@ -1,0 +1,13 @@
+Key,File,Type,UsedInMainMenu,NoTranslate,english,Context / Alternate Text,german,spanish,french,italian,japanese,koreana,polish,brazilian,russian,turkish,schinese,tchinese
+
+a_pine_forest_trader,POI,POIName,,x,Rekt Feeds,,,,,,,,,,,,,
+a_burnt_forest_trader,POI,POIName,,x,Jen's Clinic,,,,,,,,,,,,,
+a_desert_trader,POI,POIName,,x,Bob's Salvage,,,,,,,,,,,,,
+a_snow_trader,POI,POIName,,x,Hugh Got It,,,,,,,,,,,,,
+a_wasteland_trader,POI,POIName,,x,Traitor Joel's,,,,,,,,,,,,,
+
+trader_rekt,POI,POIName,,x,Rekt Feeds,,,,,,,,,,,,,
+trader_jen,POI,POIName,,x,Jen's Clinic,,,,,,,,,,,,,
+trader_bob,POI,POIName,,x,Bob's Salvage,,,,,,,,,,,,,
+trader_hugh,POI,POIName,,x,Hugh Got It,,,,,,,,,,,,,
+trader_joel,POI,POIName,,x,Traitor Joel's,,,,,,,,,,,,,
