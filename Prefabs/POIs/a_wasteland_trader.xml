@@ -18,7 +18,7 @@
   <property name="ExcludePOICulling" value="True" />
   <property name="ShowQuestClearCount" value="1" />
   <property name="Tags" value="gateway, nocheckpoint" />
-  <property name="ThemeTags" value="trader, traderJoel" />
+  <property name="ThemeTags" value="trader" />
   <property name="ThemeRepeatDistance" value="1000" />
   <property name="PrefabSize" value="60, 48, 60" />
   <property name="TeleportVolumeSize" value="49, 6, 53#4, 32, 4#4, 6, 42#6, 7, 7#6, 4, 2#7, 4, 1#50, 15, 55#5, 5, 42#3, 14, 3#3, 6, 3#3, 9, 3#7, 4, 1#2, 4, 4#1, 5, 6#5, 4, 5" />

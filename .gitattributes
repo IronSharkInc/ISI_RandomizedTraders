@@ -1,2 +1,7 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Do not export the local mod helper script, the image cache folder, or this gitattributes file
+images/** export-ignore
+copy_and_patch_traders.ps1 export-ignore
+.gitattributes export-ignore
