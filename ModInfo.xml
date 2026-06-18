@@ -2,7 +2,7 @@
 <xml>
 	<Name value="ISI-RandomizedTraders" />
 	<DisplayName value="ISI Randomized Traders" />
-	<Version value="3.0.1.2" />
+	<Version value="3.0.1.3" />
 	<Description value="Allow traders to spawn in any biomes _without_ breaking trader progression" />
 	<Author value="IronSharkInc" />
 	<Website value="https://github.com/IronSharkInc" />
